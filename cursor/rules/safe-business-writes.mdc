@@ -37,8 +37,10 @@ Clients with OAuth (Claude, ChatGPT, Cursor) can use the URL alone and sign in.
 Agent frameworks use an agent token from https://app.aviansuite.com/account/agents.
 Give each agent its own token so its changes can be undone on their own.
 
-No account yet: the agent can create a card-free sandbox and hand its person a
-claim link.
+No account yet: connect to `https://mcp.aviansuite.com/start` instead. It needs
+no sign-in; its `create_workspace` tool creates a card-free sandbox in the chat
+and returns a claim link for the person and a personal connector URL for later
+chats. Without MCP, the agent can call the HTTP endpoint:
 
 ```sh
 curl -X POST https://app.aviansuite.com/api/agent-signup \
