@@ -38,9 +38,10 @@ Agent frameworks use an agent token from https://app.aviansuite.com/account/agen
 Give each agent its own token so its changes can be undone on their own.
 
 No account yet: connect to `https://mcp.aviansuite.com/start` instead. It needs
-no sign-in; its `create_workspace` tool creates a card-free sandbox in the chat
-and returns a claim link for the person and a personal connector URL for later
-chats. Without MCP, the agent can call the HTTP endpoint:
+no sign-in; its `request_workspace` tool returns an approval link for the person.
+When they open it and click Create workspace, a card-free sandbox is connected to
+the chat, and the agent gets a claim link and a personal connector URL for later
+chats. Without MCP, code the developer runs can call the HTTP endpoint:
 
 ```sh
 curl -X POST https://app.aviansuite.com/api/agent-signup \
