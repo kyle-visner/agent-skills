@@ -1,0 +1,13 @@
+{
+  "name": "aviansuite",
+  "version": "0.1.0",
+  "description": "Safe write access for AI agents: a skill that teaches coding agents to record business facts in AvianSuite, where every change is kept, attributed and can be undone, plus the AvianSuite MCP server.",
+  "author": {
+    "name": "Future Perfect, LLC",
+    "url": "https://aviansuite.com"
+  },
+  "homepage": "https://aviansuite.com/docs/mcp/",
+  "repository": "https://github.com/kyle-visner/agent-skills",
+  "license": "MIT",
+  "keywords": ["mcp", "ai-agents", "agent-memory", "undo", "audit-trail", "business-data"]
+}

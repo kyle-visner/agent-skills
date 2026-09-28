@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "aviansuite": {
+      "type": "http",
+      "url": "https://mcp.aviansuite.com/mcp",
+      "note": "AvianSuite: safe write access for AI agents. Signs in with OAuth on first use. Every change is kept, attributed and can be undone."
+    }
+  }
+}
