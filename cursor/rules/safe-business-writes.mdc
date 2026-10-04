@@ -47,8 +47,9 @@ curl -X POST https://app.aviansuite.com/agent/identity \
   -d '{"type": "service_auth", "login_hint": "person@example.com", "agent_name": "Help desk bot", "purpose": "Keep ticket status for the help desk"}'
 ```
 
-The person opens the link, sets a password to create a free sandbox (no card) or
-signs in, and types the code. The agent then polls `/oauth/token` with its
+The person opens the link and types the code, then confirms their email and sets a
+password to create a free sandbox (no card), or
+signs in. The agent then polls `/oauth/token` with its
 `claim_token` and uses the access token as `Authorization: Bearer` on
 `https://mcp.aviansuite.com/mcp`.
 
