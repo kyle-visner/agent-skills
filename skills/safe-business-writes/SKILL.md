@@ -37,17 +37,20 @@ Clients with OAuth (Claude, ChatGPT, Cursor) can use the URL alone and sign in.
 Agent frameworks use an agent token from https://app.aviansuite.com/account/agents.
 Give each agent its own token so its changes can be undone on their own.
 
-No account yet: connect to `https://mcp.aviansuite.com/start` instead. It needs
-no sign-in; its `request_workspace` tool returns an approval link for the person.
-When they open it and click Create workspace, a card-free sandbox is connected to
-the chat, and the agent gets a claim link and a personal connector URL for later
-chats. Without MCP, code the developer runs can call the HTTP endpoint:
+No account yet: register with auth.md (https://aviansuite.com/auth.md). It is
+the one way a new agent gets in. Code the developer runs registers with the
+person's email and gets a link and a six-digit code for the person:
 
 ```sh
-curl -X POST https://app.aviansuite.com/api/agent-signup \
+curl -X POST https://app.aviansuite.com/agent/identity \
   -H 'Content-Type: application/json' \
-  -d '{"email": "person@example.com", "purpose": "Keep ticket status for the help desk"}'
+  -d '{"type": "service_auth", "login_hint": "person@example.com", "agent_name": "Help desk bot", "purpose": "Keep ticket status for the help desk"}'
 ```
+
+The person opens the link, sets a password to create a free sandbox (no card) or
+signs in, and types the code. The agent then polls `/oauth/token` with its
+`claim_token` and uses the access token as `Authorization: Bearer` on
+`https://mcp.aviansuite.com/mcp`.
 
 Self-hosted and free: run Stellar Jay (https://github.com/kyle-visner/stellarjay)
 and the stdio server `stellarjay-mcp` with `STELLARJAY_URL` and `STELLARJAY_TOKEN`.

@@ -37,9 +37,9 @@ the wrong ticket, and undoes its own mistake ([task](examples/task.txt)):
 - [n8n](examples/n8n/README.md)
 
 Set `AVIANSUITE_TOKEN` to an agent token from
-https://app.aviansuite.com/account/agents. No account? Connect a client to
-`https://mcp.aviansuite.com/start` (no sign-in) and ask the agent to create a
-workspace, or `POST https://app.aviansuite.com/api/agent-signup`.
+https://app.aviansuite.com/account/agents. No account? Register with
+[auth.md](https://aviansuite.com/auth.md): the person types a code and gets a
+free sandbox.
 Self-hosting is free: see [Stellar Jay](https://github.com/kyle-visner/stellarjay).
 
 ## Scope
